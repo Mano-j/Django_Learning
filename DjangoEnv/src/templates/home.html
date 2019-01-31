@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+        color: white;
+        text-align: centre;
+        }
+    </style>
+</head>
+<body background="/static/nebula-bg.jpg">
+<h3>Name 1: </h3>
+<form method="get" action="/print_name"> {%csrf_token%}
+<input type="text" name="name1"> <br><br><br>
+<h3>Name 2: </h3>
+<input type="text" name="name2">
+    <input type="submit">
+<a href="/print_name">Click to print name</a>
+</form>
+<h1>Hey!</h1>
+</body>
+</html>

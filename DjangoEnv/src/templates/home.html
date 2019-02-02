@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -8,17 +9,40 @@
         color: white;
         text-align: centre;
         }
+        #title{
+            position: relative;
+            text-align: center;
+        }
+        #box{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: solid 2px white;
+            padding: 50px;
+        }
     </style>
 </head>
-<body background="/static/nebula-bg.jpg">
-<h3>Name 1: </h3>
-<form method="get" action="/print_name"> {%csrf_token%}
-<input type="text" name="name1"> <br><br><br>
-<h3>Name 2: </h3>
-<input type="text" name="name2">
-    <input type="submit">
-<a href="/print_name">Click to print name</a>
-</form>
-<h1>Hey!</h1>
+
+<body background="/static/img/nebula-bg.jpg">
+    <div id="box">
+        <div id="title">
+            <h2>FLAMES RELATIONSHIP CALCULATOR</h2>
+        </div> 
+        <div>
+            <h3>Enter the names below: </h3><br>
+        <form method="get" action="/print_name"> {%csrf_token%}
+                <h3>Name 1: </h3>
+                <input type="text" name="name1"> <br><br><br>
+                <h3>Name 2: </h3>
+                <input type="text" name="name2">
+                <input type="submit">
+                <a href="/print_name">Click to print name</a>
+            </form>
+        </div>
+
+        </div>
+        <h1>Hey!</h1>
 </body>
+
 </html>

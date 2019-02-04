@@ -11,6 +11,7 @@ def flames(name11, name22):
     name2 = ''.join(name22.split())
     i, j = 0, 0
     print('\n')
+    flag = None
 
     # Removing common letters in the names.
     print("\tRemoving common letters \n\t\t", name11, '&', name22)

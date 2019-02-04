@@ -1,34 +1,17 @@
-<!DOCTYPE html>
-<html lang="en" >
+{% extends "base.html" %}
 
-<head>
-  <meta charset="UTF-8">
-  <title>Typographic Soup</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  
-      <link rel="stylesheet" href="/static/css/3d_style.css">
-    <style>
-        body{
-        color: lightgreen;
-        }
-        #centre{
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        }
-    </style>
-  
-</head>
+{%block content%}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
-<body background="/static/img/nebula-bg.jpg">
+<link rel="stylesheet" href="/static/css/3d_style.css">
 
 <canvas></canvas>
-<div id="centre">
-    <p>fghhfglgkfkggkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</p>
-    <h1 align="centre">{{n1}}{{n2}}:{{p}}hellloooooo</h1>
+
+<div id="box" tabindex="0">
+    <div id="title">
+        <h2>Your Prediction is: </h2>
+    </div>
+    <h1 align="centre">{{n1}} And {{n2}} {{p}}.</h1>
 </div>
 
 
@@ -49,18 +32,21 @@
 
         //possible characters that will appear
         var characterList = [
+            "{{n2}}",
             "{{n1}}",
-            "{{n2}}"
+            "♥",
+            "*",
+            "."
         ];
 
 
         //stocks possible character attributes
         var layers = {
             n: 5, //number of layers
-            letters: [50, 40, 30, 20, 10], //letters per layer (starting from the deepest layer)
-            coef: [0.1, 0.2, 0.4, 0.6, 0.8], //how much the letters move from the mouse (starting from the deepest layer)
-            size: [16, 22, 36, 40, 46], //font size of the letters (starting from the deepest layer)
-            color: ["#fff", "#eee", "#ccc", "#bbb", "#aaa"], //color of the letters (starting from the deepest layer)
+            letters: [50, 30, 20, 15, 10], //letters per layer (starting from the deepest layer)
+            coef: [0.1, 0.2, 0.4, 0.6, 0.7], //how much the letters move from the mouse (starting from the deepest layer)
+            size: [20, 26, 36, 40, 55], //font size of the letters (starting from the deepest layer)
+            color: ["#E8E8E8", "#DCDCDC", "#D3D3D3", "#C8C8C8", "#BEBEBE"], //color of the letters (starting from the deepest layer)
             font: "Courier" //font family (of every layer)
         };
 
@@ -157,9 +143,4 @@
         };
     </script>
 
-
-
-
-</body>
-
-</html>
+{% endblock %}

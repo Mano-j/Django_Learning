@@ -19,6 +19,6 @@ from basic.views import home_view, print_names, name_bg
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_view, name='home'),
+    path('/', home_view, name='home'),
     path('3d/', name_bg, name='3d_bg'),
 ]

@@ -1,0 +1,1 @@
+web: gunicorn flames-calcualtor:wsgi --log-file - 

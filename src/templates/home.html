@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div id="title">
+        <h2>FLAMES RELATIONSHIP CALCULATOR</h2>
+    </div>
+
+
+
+    <div id="box" tabindex="0">
+        <div id="title">
+            <h2>Feed me thy names below </h2>
+        </div>
+        <div id="boxcontent" tabindex="0">
+
+            <br>
+            <form method="get" action="/3d"> {%csrf_token%}
+
+                    <label for="name1" style="font-size:1.17em;" class="name">Your name
+                        <input type="text" name="name1" id="name1" class="name">
+                    </label>
+
+                    <label for="name2" style="font-size:1.17em;" class="name">Your Crush's
+                        <input type="text" name="name2" id="name2" class="name">
+                    </label>
+
+                    <br><br>
+                    <input type="submit" value="Submit!" id="submit">
+            </form>
+        </div>
+
+        </div>
+
+
+{% endblock %}
